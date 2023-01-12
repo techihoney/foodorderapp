@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 
 import '../../model/order.dart';
+import '../../widget/food_order_card.dart';
 import 'cat3_controller.dart';
 
 class Cat3Screen extends StatelessWidget {
@@ -12,6 +13,8 @@ class Cat3Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<Cat3ScreenController>(builder: (controller) =>
         Scaffold(
+          appBar: AppBar(),
+
 
           body: SafeArea(
               child:
@@ -24,7 +27,16 @@ class Cat3Screen extends StatelessWidget {
                           itemCount: controller.orders.length,
 
                           itemBuilder: (context, index) {
-                            return Text('${controller.orders[index].name}'
+                            return FoodOrderCard(
+                              itemName: controller.orders[index].name,
+                              itemPrice: controller.orders[index].price,
+                              removeOnTap: () {
+
+                              },
+                              plusOnTap: () {
+                              },
+                              addOnTap: () {},
+                              itemCount: 0,
                             );
                           });
                     } else {

@@ -5,14 +5,38 @@ import 'package:get/get.dart';
 
 import '../../model/order.dart';
 
-class Cat1ScreenController extends GetxController{
-
+class Cat1ScreenController extends GetxController {
+  late final totalPrice;
   List<Order> orders = [];
 
-  final quantity = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0].obs;
- //  final quantity = 0.obs;
- // var quantity = List.filled(10, 0, growable: true);
-
+  //final quantity =0.obs;
+  final quantity = [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ].obs;
 
   @override
   void onInit() async {
@@ -20,28 +44,16 @@ class Cat1ScreenController extends GetxController{
     loadData();
   }
 
-  quantityIncrease( int index){
-   // quantity.value++;
-    quantity[index]= quantity[index]+1;
+  quantityIncrease(int index) {
+    quantity[index] = quantity[index] + 1;
+    //quantity.value++;
     update();
-    print(quantity);
-
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  addOnTap(price, index) {
+    totalPrice = quantity[index] * price;
+    print(totalPrice);
+  }
 
   Future<List<Order>> loadData() async {
     var jsonData = await rootBundle.loadString("assets/files/menu.json");
@@ -52,10 +64,5 @@ class Cat1ScreenController extends GetxController{
       orders.add(orderDetails);
     }
     return orders;
-
-
   }
-
-
-
 }

@@ -9,6 +9,7 @@ class Order {
     required this.name,
     required this.price,
     required this.instock,
+
   });
 
   factory Order.fromJSON(Map<String, dynamic> json) {

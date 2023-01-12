@@ -91,7 +91,7 @@ class FoodOrderCard extends StatelessWidget {
             style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red, foregroundColor: Colors.white),
             onPressed: addOnTap,
-            child: const Text('Add'),
+            child: const Text('Add to Cart'),
           ),
         ],
       ),
