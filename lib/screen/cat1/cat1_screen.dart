@@ -29,7 +29,7 @@ class Cat1Screen extends StatelessWidget {
                                   controller.quantityIncrease(index);
                                 },
                                 addOnTap: () {},
-                                itemCount: controller.quantity.value,
+                                itemCount: controller.quantity[index],
                               );
                             });
                       } else {

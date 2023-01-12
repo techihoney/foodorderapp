@@ -8,7 +8,10 @@ import '../../model/order.dart';
 class Cat1ScreenController extends GetxController{
 
   List<Order> orders = [];
-  final quantity =0.obs;
+
+  final quantity = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0].obs;
+ //  final quantity = 0.obs;
+ // var quantity = List.filled(10, 0, growable: true);
 
 
   @override
@@ -18,7 +21,8 @@ class Cat1ScreenController extends GetxController{
   }
 
   quantityIncrease( int index){
-    quantity.value++;
+   // quantity.value++;
+    quantity[index]= quantity[index]+1;
     update();
     print(quantity);
 
